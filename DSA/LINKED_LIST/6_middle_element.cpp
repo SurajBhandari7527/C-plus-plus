@@ -30,31 +30,22 @@ void show(Node* head){
     cout<<temp->val<<"->";
     temp=temp->next;
     }
-    cout<<"Null \n";
+    cout<<"Null";
+
 
 }
-
-
-void del_alternate(Node* &head){
-    Node* temp=head;
-    Node* prev;
-    int i=1;
-    while(temp!=NULL){
-        if((i)%2 ==0){
-            prev->next=temp->next;
-            prev=temp;
-        temp=temp->next;
-        free(prev);
-        i++;
+void find_middle(Node* head){
+        Node*temp=head;
+        int count=0;
+        while(temp!=NULL){
+            temp=temp->next;
+            count++;
         }
-        else{
-            prev=temp;
-        temp=temp->next;
-        i++;
+        temp=head;
+        for(int i=0;i<count/2 ;i++){
+            temp=temp->next;
         }
-        
-    }
-
+        cout<<"\nThe middle element is: "<<temp->val<<endl;
 }
 int main(){
     Node* head=new Node(1);
@@ -63,10 +54,8 @@ int main(){
     insertion_at_last(head,4);
     insertion_at_last(head,5);
     insertion_at_last(head,6);
-    insertion_at_last(head,7);
+    
     show(head);
-    del_alternate(head);
-    show(head);
-
+    find_middle(head);
     return 0;
 }

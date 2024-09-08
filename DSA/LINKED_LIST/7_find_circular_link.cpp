@@ -1,3 +1,5 @@
+/*Given head, the head of a linked list, determine if the linked list has a cycle in it.*/
+
 #include<iostream>
 using namespace std;
 class Node{
@@ -30,32 +32,36 @@ void show(Node* head){
     cout<<temp->val<<"->";
     temp=temp->next;
     }
-    cout<<"Null \n";
+    cout<<"Null";
+
 
 }
-
-
-void del_alternate(Node* &head){
-    Node* temp=head;
-    Node* prev;
-    int i=1;
+void make_circle(Node*head,Node*link){
+    Node*temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=link;
+}
+void find_circle(Node* head){
+    Node*temp=head;
+    Node*prev;
     while(temp!=NULL){
-        if((i)%2 ==0){
-            prev->next=temp->next;
-            prev=temp;
-        temp=temp->next;
-        free(prev);
-        i++;
+        
+        if(temp->val==-1){
+            cout<<"Circle is present "<<endl;
+            prev->next=NULL;
+            break;
+
         }
-        else{
-            prev=temp;
+        temp->val=-1;
+        prev=temp;
         temp=temp->next;
-        i++;
-        }
         
     }
 
 }
+
 int main(){
     Node* head=new Node(1);
     insertion_at_last(head,2);
@@ -63,10 +69,8 @@ int main(){
     insertion_at_last(head,4);
     insertion_at_last(head,5);
     insertion_at_last(head,6);
-    insertion_at_last(head,7);
+    make_circle(head,head->next->next->next);
+    find_circle(head);
     show(head);
-    del_alternate(head);
-    show(head);
-
     return 0;
 }
