@@ -65,21 +65,38 @@ public:
 };
 int main()
 {
+    // int n;
+    // cout << "Enter the number of students" << endl;
+    // cin >> n;
+    // Students s[n];
+
+    // for (int i = 0; i < n; i++)
+    // {
+    //     s[i].add_details();
+    // }
+    // for (int i = 0; i < n; i++)
+    // {
+    //     s[i].display_details();
+    // }
+
+    // s[1].update_details();
+    // s[1].display_details();
+
     int n;
     cout << "Enter the number of students" << endl;
     cin >> n;
-    Students s[n];
+    Students* ptr= new Students[n];
 
     for (int i = 0; i < n; i++)
     {
-        s[i].add_details();
+        ptr[i].add_details();
     }
     for (int i = 0; i < n; i++)
     {
-        s[i].display_details();
+        ptr[i].display_details();
     }
 
-    s[1].update_details();
-    s[1].display_details();
+    ptr[1].update_details();
+    ptr[1].display_details();
     return 0;
 }

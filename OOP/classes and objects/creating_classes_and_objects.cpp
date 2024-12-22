@@ -26,12 +26,20 @@ class Student {
 int main(){
  Student s[5];
 
-    for(int i=0;i<5;i++){
+    for(int i=0;i<5;i++){                               //statically
         s[i].set_details();
     }
     for(int i=0;i<5;i++){
         s[i].get_details();
     }
+    /*Student* s=new Student[5];
+
+    for(int i=0;i<5;i++){
+        s[i].set_details();
+    }
+    for(int i=0;i<5;i++){           dynamically
+        s[i].get_details();
+    }*/
     
     return 0;
 }

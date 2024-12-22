@@ -10,7 +10,9 @@ class Complex{
     public:
     float real;
     float imaginary;
-    void set_complex(float real , float imaginary){
+    void set_complex(){float real,imaginary;
+          cout<<"Enter the real and imaginary value: "<<endl;
+        cin>>real>>imaginary;
         this->real =real;
         this->imaginary=imaginary;
     }
@@ -23,7 +25,7 @@ class Complex{
 
 };
  void addition(Complex C1,Complex C2){
-        cout<<
+      
         cout<<"Addition of two Complex numbers is :"<<C1.real+C2.real<<"+"<<C1.imaginary+C2.imaginary<<"i"<<endl;
 
     }
@@ -31,9 +33,8 @@ int main(){int m,n;
     Complex C[2];
     for(int i=0;i<2;i++){
         
-        cout<<"Enter the real and imaginary value: "<<endl;
-        cin>>m>>n;
-    C[i].set_complex(m,n);
+      
+    C[i].set_complex();
 
     }
     for(int i=0;i<2;i++){
@@ -42,7 +43,7 @@ int main(){int m,n;
 
     }
     
-    addition(C[1],C[2]);
+    addition(C[0],C[1]);
 
     return 0;
 }

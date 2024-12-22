@@ -21,7 +21,7 @@ struct Students{
     // update_hostel(){
 
     // }
-    display_details(Students* ptr){
+    void display_details(Students* ptr){
 
         cout<<(*ptr).name,(*ptr).roll,(*ptr).Degree,(*ptr).hostel,(*ptr).current_CG;
     }

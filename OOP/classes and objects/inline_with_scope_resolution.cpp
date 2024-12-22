@@ -5,9 +5,7 @@ class item{
 private: 
 int a=10;
 public:
-void getData(int b){
-    cout<<"It is called";
-};
+void getData(int b);
 };
 inline void item::getData(int b)
 {cout<< a*b;
