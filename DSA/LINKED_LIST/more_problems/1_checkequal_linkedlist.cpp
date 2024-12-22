@@ -46,6 +46,7 @@ class Node{
         for(int i=0;i<count;i++){
             if(temp1->val!=temp2->val){
                 eq=false;
+                break;
             }
             else{
                 temp1=temp1->next;

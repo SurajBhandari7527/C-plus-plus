@@ -55,6 +55,7 @@ int main(){
     insertion_at_last(head,5);
     insertion_at_last(head,6);
     
+    
     show(head);
     find_middle(head);
     return 0;

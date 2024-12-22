@@ -65,7 +65,8 @@ void merge(Node*head1,Node*head2){
     }
     
         while(temp1!=NULL){
-            temp1=temp1->next;}
+            temp1=temp1->next;
+            cout<<temp1->val<<"->";}
    
         while(temp2!=NULL){
             cout<<temp2->val<<"->";
